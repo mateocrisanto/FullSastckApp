@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: questboard-api
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: CLIENT_URL
+        value: https://questboard-client.vercel.app
+      - key: MONGO_URI
+        sync: false
